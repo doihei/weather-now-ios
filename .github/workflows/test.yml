@@ -1,0 +1,68 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-models:
+    name: CoreModels
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Packages/CoreModels/.build
+          key: ${{ runner.os }}-spm-models-${{ hashFiles('Packages/CoreModels/Package.swift') }}
+          restore-keys: ${{ runner.os }}-spm-models-
+      - run: make test-models
+
+  test-network:
+    name: CoreNetwork
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Packages/CoreNetwork/.build
+          key: ${{ runner.os }}-spm-network-${{ hashFiles('Packages/CoreNetwork/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-spm-network-
+      - run: make test-network
+
+  test-domain:
+    name: WeatherDomain
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Packages/WeatherDomain/.build
+          key: ${{ runner.os }}-spm-domain-${{ hashFiles('Packages/WeatherDomain/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-spm-domain-
+      - run: make test-domain
+
+  test-feature-mvvm:
+    name: WeatherFeature (MVVM)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Packages/WeatherFeature/.build
+          key: ${{ runner.os }}-spm-feature-mvvm-${{ hashFiles('Packages/WeatherFeature/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-spm-feature-
+      - run: make test-feature-mvvm
+
+  test-feature-tca:
+    name: WeatherFeature (TCA)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Packages/WeatherFeature/.build
+          key: ${{ runner.os }}-spm-feature-tca-${{ hashFiles('Packages/WeatherFeature/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-spm-feature-
+      - run: make test-feature-tca
