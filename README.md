@@ -1,4 +1,4 @@
-# WeatherNow
+# WeatherNow iOS
 
 Open-Meteo API を使った iOS 天気予報アプリ。MVVM + @Observable と TCA の2アーキテクチャで比較実装する学習プロジェクト。
 
