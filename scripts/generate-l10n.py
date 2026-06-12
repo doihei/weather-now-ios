@@ -35,11 +35,13 @@ def generate(xcstrings_path: str, output_path: str) -> None:
         "public enum L10n {",
     ]
 
-    for key in keys:
+    for i, key in enumerate(keys):
         prop = to_camel_case(key)
         lines.append(f'    public static var {prop}: String {{')
         lines.append(f'        String(localized: "{key}", bundle: Bundle.module)')
         lines.append(f'    }}')
+        if i < len(keys) - 1:
+            lines.append('')
 
     lines.append("}")
     lines.append("")
