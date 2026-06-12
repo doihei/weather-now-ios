@@ -84,7 +84,6 @@ public struct CitySearchFeature: Sendable {
                 return .none
 
             case let .addCityTapped(result):
-                state.addedCityIDs.insert(result.id)
                 return .send(.delegate(.cityAdded(result)))
 
             case .delegate:
