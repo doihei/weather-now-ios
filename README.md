@@ -43,6 +43,10 @@ WeatherNow
 └── CoreUI               ← 共通コンポーネント
 ```
 
+## CI
+
+GitHub Actions でプッシュ・PR 時に全テストを自動実行します（`.github/workflows/test.yml`）。
+
 ## ドキュメント
 
 | ファイル | 内容 |

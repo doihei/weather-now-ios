@@ -31,6 +31,6 @@ make test-feature-tca   # TCA のみ
 
 - **Phase 1–2 完了**：CoreModels・CoreNetwork・CoreUI・WeatherDomain
 - **Phase 3 完了**：WeatherFeature MVVM ViewModels
-- **Phase 4 完了**：WeatherFeature TCA Features（36テスト）
+- **Phase 4 完了**：WeatherFeature TCA Features（38テスト）
 - **Phase 5 完了**：全 View 実装（MVVM / TCA）・Swift Charts・ダークモード対応
 - **Phase Ex1 完了**：デザインシステム（Spacing / Size / AppSymbol トークン・L10n 自動生成）
