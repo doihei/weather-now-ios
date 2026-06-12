@@ -54,6 +54,6 @@ components.queryItems = [ ... ]
 
 ## パッケージ設定
 
-- `swift-tools-version: 6.2`
+- `swift-tools-version: 6.1`
 - 最低サポート: `.iOS(.v17)`
 - macOS向けにビルドが必要な場合は `.macOS(.v14)` を追加する

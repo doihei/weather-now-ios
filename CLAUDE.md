@@ -2,7 +2,7 @@
 
 Open-Meteo API を使った iOS 天気予報アプリ。MVVM + TCA の2アーキテクチャ比較実装。
 
-- iOS 17+ / Swift 6（swift-tools-version: 6.2）
+- iOS 17+ / Swift 6（swift-tools-version: 6.1）
 - 仕様: @docs/spec.md / API: @docs/api.md / 設計: @docs/architecture.md
 
 ## モジュール構成
