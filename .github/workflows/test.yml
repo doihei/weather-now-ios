@@ -12,6 +12,9 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.2"
       - uses: actions/cache@v4
         with:
           path: Packages/CoreModels/.build
@@ -24,6 +27,9 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.2"
       - uses: actions/cache@v4
         with:
           path: Packages/CoreNetwork/.build
@@ -36,6 +42,9 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.2"
       - uses: actions/cache@v4
         with:
           path: Packages/WeatherDomain/.build
@@ -48,6 +57,9 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.2"
       - uses: actions/cache@v4
         with:
           path: Packages/WeatherFeature/.build
@@ -60,6 +72,9 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: "6.2"
       - uses: actions/cache@v4
         with:
           path: Packages/WeatherFeature/.build
