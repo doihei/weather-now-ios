@@ -34,7 +34,7 @@ public struct CurrentWeatherView: View {
                 errorView(error: error)
             }
         }
-        .navigationTitle(store.cityName.isEmpty ? L10n.currentWeatherTitle.string() : store.cityName)
+        .navigationTitle(store.cityName.isEmpty ? L10n.currentWeatherTitle : store.cityName)
         .refreshable {
             store.send(.refresh)
         }
@@ -72,7 +72,7 @@ public struct CurrentWeatherView: View {
                 let feelsLikeStr = feelsLike.formatted(.number.precision(.fractionLength(0)))
                 let windStr = wind.formatted(.number.precision(.fractionLength(1)))
                 Label(
-                    "\(L10n.currentWeatherFeelsLikePrefix.string()) \(feelsLikeStr)\(settings.temperatureUnit.symbol)",
+                    "\(L10n.currentWeatherFeelsLikePrefix) \(feelsLikeStr)\(settings.temperatureUnit.symbol)",
                     systemImage: AppSymbol.thermometer.rawValue
                 )
                 Label("\(current.humidity)%", systemImage: AppSymbol.humidity.rawValue)

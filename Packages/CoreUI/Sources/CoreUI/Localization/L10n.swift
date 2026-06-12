@@ -10,111 +10,85 @@ import Foundation
 ///
 /// View 側は `Text(L10n.cityListTitle)` のように使用する。
 public enum L10n {
-    public static var cityListTitle: LocalizedStringResource {
-        LocalizedStringResource("cityList.title", bundle: .atURL(Bundle.module.bundleURL))
+    public static var cityListTitle: String {
+        String(localized: "cityList.title", bundle: Bundle.module)
     }
-
-    public static var citySearchEmptyResult: LocalizedStringResource {
-        LocalizedStringResource("citySearch.emptyResult", bundle: .atURL(Bundle.module.bundleURL))
+    public static var citySearchEmptyResult: String {
+        String(localized: "citySearch.emptyResult", bundle: Bundle.module)
     }
-
-    public static var citySearchSearchPrompt: LocalizedStringResource {
-        LocalizedStringResource("citySearch.searchPrompt", bundle: .atURL(Bundle.module.bundleURL))
+    public static var citySearchSearchPrompt: String {
+        String(localized: "citySearch.searchPrompt", bundle: Bundle.module)
     }
-
-    public static var citySearchTitle: LocalizedStringResource {
-        LocalizedStringResource("citySearch.title", bundle: .atURL(Bundle.module.bundleURL))
+    public static var citySearchTitle: String {
+        String(localized: "citySearch.title", bundle: Bundle.module)
     }
-
-    public static var currentWeatherFeelsLikePrefix: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.feelsLikePrefix", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherFeelsLikePrefix: String {
+        String(localized: "currentWeather.feelsLikePrefix", bundle: Bundle.module)
     }
-
-    public static var currentWeatherHourlyChartButton: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.hourlyChartButton", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherHourlyChartButton: String {
+        String(localized: "currentWeather.hourlyChartButton", bundle: Bundle.module)
     }
-
-    public static var currentWeatherLoading: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.loading", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherLoading: String {
+        String(localized: "currentWeather.loading", bundle: Bundle.module)
     }
-
-    public static var currentWeatherOpenSettings: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.openSettings", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherOpenSettings: String {
+        String(localized: "currentWeather.openSettings", bundle: Bundle.module)
     }
-
-    public static var currentWeatherRetry: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.retry", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherRetry: String {
+        String(localized: "currentWeather.retry", bundle: Bundle.module)
     }
-
-    public static var currentWeatherTitle: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.title", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherTitle: String {
+        String(localized: "currentWeather.title", bundle: Bundle.module)
     }
-
-    public static var currentWeatherTodayForecast: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.todayForecast", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherTodayForecast: String {
+        String(localized: "currentWeather.todayForecast", bundle: Bundle.module)
     }
-
-    public static var currentWeatherWeeklyForecastButton: LocalizedStringResource {
-        LocalizedStringResource("currentWeather.weeklyForecastButton", bundle: .atURL(Bundle.module.bundleURL))
+    public static var currentWeatherWeeklyForecastButton: String {
+        String(localized: "currentWeather.weeklyForecastButton", bundle: Bundle.module)
     }
-
-    public static var hourlyChartPrecipitation: LocalizedStringResource {
-        LocalizedStringResource("hourlyChart.precipitation", bundle: .atURL(Bundle.module.bundleURL))
+    public static var hourlyChartPrecipitation: String {
+        String(localized: "hourlyChart.precipitation", bundle: Bundle.module)
     }
-
-    public static var hourlyChartTemperature: LocalizedStringResource {
-        LocalizedStringResource("hourlyChart.temperature", bundle: .atURL(Bundle.module.bundleURL))
+    public static var hourlyChartTemperature: String {
+        String(localized: "hourlyChart.temperature", bundle: Bundle.module)
     }
-
-    public static var hourlyChartTime: LocalizedStringResource {
-        LocalizedStringResource("hourlyChart.time", bundle: .atURL(Bundle.module.bundleURL))
+    public static var hourlyChartTime: String {
+        String(localized: "hourlyChart.time", bundle: Bundle.module)
     }
-
-    public static var hourlyChartTitle: LocalizedStringResource {
-        LocalizedStringResource("hourlyChart.title", bundle: .atURL(Bundle.module.bundleURL))
+    public static var hourlyChartTitle: String {
+        String(localized: "hourlyChart.title", bundle: Bundle.module)
     }
-
-    public static var settingsAppearanceSection: LocalizedStringResource {
-        LocalizedStringResource("settings.appearanceSection", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsAppearanceSection: String {
+        String(localized: "settings.appearanceSection", bundle: Bundle.module)
     }
-
-    public static var settingsInfoSection: LocalizedStringResource {
-        LocalizedStringResource("settings.infoSection", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsInfoSection: String {
+        String(localized: "settings.infoSection", bundle: Bundle.module)
     }
-
-    public static var settingsTemperaturePicker: LocalizedStringResource {
-        LocalizedStringResource("settings.temperaturePicker", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsTemperaturePicker: String {
+        String(localized: "settings.temperaturePicker", bundle: Bundle.module)
     }
-
-    public static var settingsThemePicker: LocalizedStringResource {
-        LocalizedStringResource("settings.themePicker", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsThemePicker: String {
+        String(localized: "settings.themePicker", bundle: Bundle.module)
     }
-
-    public static var settingsTitle: LocalizedStringResource {
-        LocalizedStringResource("settings.title", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsTitle: String {
+        String(localized: "settings.title", bundle: Bundle.module)
     }
-
-    public static var settingsUnitSection: LocalizedStringResource {
-        LocalizedStringResource("settings.unitSection", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsUnitSection: String {
+        String(localized: "settings.unitSection", bundle: Bundle.module)
     }
-
-    public static var settingsWindPicker: LocalizedStringResource {
-        LocalizedStringResource("settings.windPicker", bundle: .atURL(Bundle.module.bundleURL))
+    public static var settingsWindPicker: String {
+        String(localized: "settings.windPicker", bundle: Bundle.module)
     }
-
-    public static var tabCity: LocalizedStringResource {
-        LocalizedStringResource("tab.city", bundle: .atURL(Bundle.module.bundleURL))
+    public static var tabCity: String {
+        String(localized: "tab.city", bundle: Bundle.module)
     }
-
-    public static var tabSettings: LocalizedStringResource {
-        LocalizedStringResource("tab.settings", bundle: .atURL(Bundle.module.bundleURL))
+    public static var tabSettings: String {
+        String(localized: "tab.settings", bundle: Bundle.module)
     }
-
-    public static var tabWeather: LocalizedStringResource {
-        LocalizedStringResource("tab.weather", bundle: .atURL(Bundle.module.bundleURL))
+    public static var tabWeather: String {
+        String(localized: "tab.weather", bundle: Bundle.module)
     }
-
-    public static var weeklyForecastTitle: LocalizedStringResource {
-        LocalizedStringResource("weeklyForecast.title", bundle: .atURL(Bundle.module.bundleURL))
+    public static var weeklyForecastTitle: String {
+        String(localized: "weeklyForecast.title", bundle: Bundle.module)
     }
 }

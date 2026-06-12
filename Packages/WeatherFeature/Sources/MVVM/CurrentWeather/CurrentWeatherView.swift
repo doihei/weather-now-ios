@@ -41,7 +41,7 @@ public struct CurrentWeatherView: View {
             }
         }
         .navigationTitle(
-            viewModel.cityName.isEmpty ? L10n.currentWeatherLoading.string() : viewModel.cityName
+            viewModel.cityName.isEmpty ? L10n.currentWeatherLoading : viewModel.cityName
         )
         .refreshable {
             viewModel.refresh()
@@ -77,7 +77,7 @@ public struct CurrentWeatherView: View {
                 let feelsLikeStr = feelsLike.formatted(.number.precision(.fractionLength(0)))
                 let windStr = wind.formatted(.number.precision(.fractionLength(1)))
                 Label(
-                    "\(L10n.currentWeatherFeelsLikePrefix.string()) \(feelsLikeStr)\(settings.temperatureUnit.symbol)",
+                    "\(L10n.currentWeatherFeelsLikePrefix) \(feelsLikeStr)\(settings.temperatureUnit.symbol)",
                     systemImage: AppSymbol.thermometer.rawValue
                 )
                 Label("\(current.humidity)%", systemImage: AppSymbol.humidity.rawValue)

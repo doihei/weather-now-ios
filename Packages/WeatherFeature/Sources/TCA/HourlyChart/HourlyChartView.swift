@@ -35,8 +35,8 @@ public struct HourlyChartView: View {
                 .font(.headline)
             Chart(store.hourlyForecasts) { forecast in
                 LineMark(
-                    x: .value(L10n.hourlyChartTime.string(), forecast.time),
-                    y: .value(L10n.hourlyChartTemperature.string(), temperatureUnit.convert(forecast.temperature))
+                    x: .value(L10n.hourlyChartTime, forecast.time),
+                    y: .value(L10n.hourlyChartTemperature, temperatureUnit.convert(forecast.temperature))
                 )
                 .foregroundStyle(.orange)
                 .interpolationMethod(.catmullRom)
@@ -58,8 +58,8 @@ public struct HourlyChartView: View {
                 .font(.headline)
             Chart(store.hourlyForecasts) { forecast in
                 BarMark(
-                    x: .value(L10n.hourlyChartTime.string(), forecast.time),
-                    y: .value(L10n.hourlyChartPrecipitation.string(), forecast.precipitation)
+                    x: .value(L10n.hourlyChartTime, forecast.time),
+                    y: .value(L10n.hourlyChartPrecipitation, forecast.precipitation)
                 )
                 .foregroundStyle(.blue)
             }

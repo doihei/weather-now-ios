@@ -37,8 +37,8 @@ def generate(xcstrings_path: str, output_path: str) -> None:
 
     for key in keys:
         prop = to_camel_case(key)
-        lines.append(f'    public static var {prop}: LocalizedStringResource {{')
-        lines.append(f'        LocalizedStringResource("{key}", bundle: .atURL(Bundle.module.bundleURL))')
+        lines.append(f'    public static var {prop}: String {{')
+        lines.append(f'        String(localized: "{key}", bundle: Bundle.module)')
         lines.append(f'    }}')
 
     lines.append("}")
