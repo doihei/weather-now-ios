@@ -54,7 +54,7 @@ public enum AppSymbol {
 
 ```swift
 // OK
-VStack(spacing: Spacing.large) { ... }
+VStack(spacing: Spacing.lg) { ... }
 .frame(width: Size.iconMD)
 
 // NG

@@ -22,7 +22,7 @@ WeatherFeatureTCA  ─┤→ WeatherDomain → CoreNetwork → CoreModels
 |---|---|---|
 | CoreModels | データモデル・エラー型・設定値 | Weather, City, AppSettings, WeatherCode, WeatherError |
 | CoreNetwork | HTTP 通信・レスポンス変換 | APIClient, WeatherAPIClient, GeocodingAPIClient, OpenMeteoEndpoint |
-| CoreUI | 共通 UI コンポーネント・モデルへの UI extension・Design Tokens・ローカライズ | WeatherIconView, TemperatureText, Spacing, Size, AppSymbol, L10n |
+| CoreUI | 共通 UI コンポーネント・モデルへの UI extension・Design Tokens・ローカライズ | WeatherIconView, TemperatureText, Spacing, Size, CornerRadius, AppSymbol, L10n |
 | WeatherDomain | Repository・LocationService・AppSettingsService・CityListService | WeatherRepository, LocationService, AppSettingsService, CityListService |
 | WeatherFeatureMVVM | MVVM 実装の View・ViewModel | AppViewModel, CityListViewModel, CitySearchViewModel, CurrentWeatherViewModel, WeeklyForecastViewModel + 各画面 View |
 | WeatherFeatureTCA | TCA 実装の View・Feature | RootFeature, CurrentWeatherFeature, WeeklyForecastFeature, CityListFeature, CityRowFeature, CitySearchFeature + 各画面 View |
@@ -68,7 +68,25 @@ Protocol・実装・DependencyKey を同一ディレクトリに配置する（C
 
 ---
 
-## 6. MVVM vs TCA 実装方針
+## 6. CoreUI ファイル構成
+
+```
+CoreUI/
+├── Components/
+│   ├── Atoms/    — WeatherIconView, TemperatureText, HourlyItemView（最小単位）
+│   ├── Sections/ — CurrentWeatherSummaryView, CurrentWeatherLoadedView,
+│   │               HourlyForecastStripView, WeatherDetailNavigationButtons（画面セクション）
+│   └── States/   — WeatherLoadingView, WeatherErrorView（画面状態）
+├── Extensions/   — WeatherCode+SFSymbol, Theme+ColorScheme, Theme+DisplayName,
+│                   TemperatureUnit+AccessibilityName, WindUnit+AccessibilityName
+├── Localization/ — L10n.swift（自動生成）, LocalizedStringResource+Extension
+├── Resources/    — Localizable.xcstrings
+└── Tokens/       — Spacing, Size, CornerRadius, AppSymbol（Design Tokens）
+```
+
+---
+
+## 8. MVVM vs TCA 実装方針
 
 | 関心事 | MVVM（@Observable） | TCA（@Reducer） |
 |---|---|---|
@@ -81,7 +99,7 @@ Protocol・実装・DependencyKey を同一ディレクトリに配置する（C
 
 ---
 
-## 7. エラーハンドリング
+## 9. エラーハンドリング
 
 全エラーは `WeatherError` に集約する。
 
@@ -95,7 +113,7 @@ Protocol・実装・DependencyKey を同一ディレクトリに配置する（C
 
 ---
 
-## 8. SF Symbols 利用方針
+## 10. SF Symbols 利用方針
 
 SF Symbols は `SFSafeSymbols` ライブラリを使って型安全に扱う。定義は CoreUI に集約し、`CoreModels` には置かない。
 
@@ -116,7 +134,7 @@ WeatherFeature 側では `AppSymbol.xxx.rawValue` を `systemImage:` に渡す�
 
 ---
 
-## 9. WeatherFeatureTCA ファイル構成
+## 11. WeatherFeatureTCA ファイル構成
 
 ```
 Sources/TCA/

@@ -45,7 +45,12 @@ WeatherNow
 
 ## CI
 
-GitHub Actions でプッシュ・PR 時に全テストを自動実行します（`.github/workflows/test.yml`）。
+GitHub Actions でプッシュ・PR 時に以下を自動実行します。
+
+| ワークフロー | 内容 |
+|---|---|
+| `.github/workflows/test.yml` | 全パッケージのユニットテスト |
+| `.github/workflows/lint.yml` | SwiftLint（違反検出）・SwiftFormat（フォーマットチェック） |
 
 ## ドキュメント
 
