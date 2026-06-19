@@ -54,7 +54,7 @@ private struct CitySearchResultRow: View {
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: Spacing.xxSmall) {
+            VStack(alignment: .leading, spacing: Spacing.xxs) {
                 Text(result.name)
                     .font(.body)
                 Text(result.country)
@@ -75,6 +75,6 @@ private struct CitySearchResultRow: View {
                 .buttonStyle(.plain)
             }
         }
-        .padding(.vertical, Spacing.xxSmall)
+        .padding(.vertical, Spacing.xxs)
     }
 }

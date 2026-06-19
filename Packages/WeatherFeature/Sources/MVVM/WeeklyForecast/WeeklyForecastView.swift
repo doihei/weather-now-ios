@@ -28,7 +28,7 @@ private struct DailyForecastRow: View {
     let temperatureUnit: AppSettings.TemperatureUnit
 
     var body: some View {
-        HStack(spacing: Spacing.large) {
+        HStack(spacing: Spacing.lg) {
             Text(forecast.date, format: .dateTime.month().day().weekday(.abbreviated))
                 .frame(width: Size.labelColumn, alignment: .leading)
                 .font(.subheadline)
@@ -49,7 +49,7 @@ private struct DailyForecastRow: View {
             TemperatureText(celsius: forecast.minTemp, unit: temperatureUnit)
                 .foregroundStyle(.blue)
 
-            VStack(alignment: .trailing, spacing: Spacing.xxSmall) {
+            VStack(alignment: .trailing, spacing: Spacing.xxs) {
                 Text("\(forecast.precipitationProb)%")
                     .font(.caption2)
                     .foregroundStyle(.blue)
@@ -58,6 +58,6 @@ private struct DailyForecastRow: View {
                     .tint(.blue)
             }
         }
-        .padding(.vertical, Spacing.xSmall)
+        .padding(.vertical, Spacing.xs)
     }
 }

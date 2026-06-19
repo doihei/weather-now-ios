@@ -16,7 +16,7 @@ public struct CityRowView: View {
 
     public var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: Spacing.xSmall) {
+            VStack(alignment: .leading, spacing: Spacing.xs) {
                 Text(store.city.name)
                     .font(.headline)
                 Text(store.city.country)
@@ -25,7 +25,7 @@ public struct CityRowView: View {
             }
             Spacer()
             if let weather = store.weather {
-                HStack(spacing: Spacing.medium) {
+                HStack(spacing: Spacing.md) {
                     WeatherIconView(code: weather.current.code, size: Size.iconSM)
                     TemperatureText(celsius: weather.current.temperature, unit: temperatureUnit)
                         .font(.title3)
@@ -34,7 +34,7 @@ public struct CityRowView: View {
                 ProgressView()
             }
         }
-        .padding(.vertical, Spacing.xSmall)
+        .padding(.vertical, Spacing.xs)
         .onAppear { store.send(.onAppear) }
     }
 }

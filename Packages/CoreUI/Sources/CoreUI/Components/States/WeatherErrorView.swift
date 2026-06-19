@@ -15,7 +15,7 @@ public struct WeatherErrorView: View {
     }
 
     public var body: some View {
-        VStack(spacing: Spacing.xLarge) {
+        VStack(spacing: Spacing.xl) {
             Image(systemName: AppSymbol.errorWarning.rawValue)
                 .font(.largeTitle)
                 .foregroundStyle(.orange)

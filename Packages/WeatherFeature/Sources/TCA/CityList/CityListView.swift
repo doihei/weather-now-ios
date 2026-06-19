@@ -47,9 +47,9 @@ public struct CityListView: View {
                     Text(error)
                         .font(.caption)
                         .foregroundStyle(.white)
-                        .padding(Spacing.medium)
+                        .padding(Spacing.md)
                         .background(Color.red.opacity(0.8))
-                        .clipShape(RoundedRectangle(cornerRadius: Size.CornerRadius.small))
+                        .clipShape(RoundedRectangle(cornerRadius: CornerRadius.sm))
                         .padding()
                 }
             }

@@ -28,7 +28,7 @@ public struct CurrentWeatherLoadedView: View {
 
     public var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: Spacing.xxLarge) {
+            VStack(alignment: .leading, spacing: Spacing.xxl) {
                 CurrentWeatherSummaryView(current: weather.current, settings: settings)
                 HourlyForecastStripView(
                     hourly: weather.hourly,

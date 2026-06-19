@@ -17,7 +17,7 @@ public struct WeatherDetailNavigationButtons: View {
     }
 
     public var body: some View {
-        HStack(spacing: Spacing.xLarge) {
+        HStack(spacing: Spacing.xl) {
             Button(action: onWeeklyForecast) {
                 Label(
                     L10n.currentWeatherWeeklyForecastButton,

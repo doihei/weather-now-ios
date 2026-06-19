@@ -14,17 +14,17 @@ public struct HourlyForecastStripView: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: Spacing.medium) {
+        VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.currentWeatherTodayForecast)
                 .font(.headline)
                 .accessibilityAddTraits(.isHeader)
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: Spacing.xLarge) {
+                HStack(spacing: Spacing.xl) {
                     ForEach(hourlyItems) { forecast in
                         HourlyItemView(forecast: forecast, temperatureUnit: temperatureUnit)
                     }
                 }
-                .padding(.horizontal, Spacing.xSmall)
+                .padding(.horizontal, Spacing.xs)
             }
         }
     }

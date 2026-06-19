@@ -16,7 +16,7 @@ public struct HourlyChartView: View {
 
     public var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: Spacing.xxLarge) {
+            VStack(alignment: .leading, spacing: Spacing.xxl) {
                 temperatureChart
                 precipitationChart
             }
@@ -28,7 +28,7 @@ public struct HourlyChartView: View {
     // MARK: - Private Views
 
     private var temperatureChart: some View {
-        VStack(alignment: .leading, spacing: Spacing.medium) {
+        VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.hourlyChartTemperature)
                 .font(.headline)
             Chart(hourlyForecasts) { forecast in
@@ -61,7 +61,7 @@ public struct HourlyChartView: View {
     }
 
     private var precipitationChart: some View {
-        VStack(alignment: .leading, spacing: Spacing.medium) {
+        VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.hourlyChartPrecipitation)
                 .font(.headline)
             Chart(hourlyForecasts) { forecast in

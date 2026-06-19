@@ -59,9 +59,9 @@ public struct CityListView: View {
                     Text(error)
                         .font(.caption)
                         .foregroundStyle(.white)
-                        .padding(Spacing.medium)
+                        .padding(Spacing.md)
                         .background(Color.red.opacity(0.8))
-                        .clipShape(RoundedRectangle(cornerRadius: Size.CornerRadius.small))
+                        .clipShape(RoundedRectangle(cornerRadius: CornerRadius.sm))
                         .padding()
                 }
             }
@@ -85,7 +85,7 @@ private struct CityRow: View {
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: Spacing.xSmall) {
+            VStack(alignment: .leading, spacing: Spacing.xs) {
                 Text(city.name)
                     .font(.headline)
                 Text(city.country)
@@ -94,7 +94,7 @@ private struct CityRow: View {
             }
             Spacer()
             if let weather {
-                HStack(spacing: Spacing.medium) {
+                HStack(spacing: Spacing.md) {
                     WeatherIconView(code: weather.current.code, size: Size.iconSM)
                     TemperatureText(celsius: weather.current.temperature, unit: temperatureUnit)
                         .font(.title3)
@@ -103,6 +103,6 @@ private struct CityRow: View {
                 ProgressView()
             }
         }
-        .padding(.vertical, Spacing.xSmall)
+        .padding(.vertical, Spacing.xs)
     }
 }

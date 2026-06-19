@@ -7,7 +7,7 @@ public struct WeatherLoadingView: View {
     public init() {}
 
     public var body: some View {
-        VStack(spacing: Spacing.xLarge) {
+        VStack(spacing: Spacing.xl) {
             ProgressView()
             Text(L10n.currentWeatherLoading)
                 .foregroundStyle(.secondary)

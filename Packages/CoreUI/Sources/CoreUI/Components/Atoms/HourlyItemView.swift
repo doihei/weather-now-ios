@@ -18,7 +18,7 @@ public struct HourlyItemView: View {
     }
 
     public var body: some View {
-        VStack(spacing: Spacing.small) {
+        VStack(spacing: Spacing.sm) {
             Text(forecast.time, format: .dateTime.hour())
                 .font(.caption2)
                 .foregroundStyle(.secondary)

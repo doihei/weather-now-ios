@@ -14,14 +14,14 @@ public struct CurrentWeatherSummaryView: View {
     }
 
     public var body: some View {
-        VStack(alignment: .center, spacing: Spacing.large) {
+        VStack(alignment: .center, spacing: Spacing.lg) {
             WeatherIconView(code: current.code, size: Size.iconLG)
             Text(current.code.description)
                 .font(.title3)
                 .foregroundStyle(.secondary)
             TemperatureText(celsius: current.temperature, unit: settings.temperatureUnit)
                 .font(.system(size: Size.fontDisplay, weight: .thin))
-            HStack(spacing: Spacing.xxLarge) {
+            HStack(spacing: Spacing.xxl) {
                 let feelsLike = settings.temperatureUnit.convert(current.feelsLike)
                 let wind = settings.windUnit.convert(current.windSpeed)
                 let feelsLikeStr = feelsLike.formatted(.number.precision(.fractionLength(0)))
