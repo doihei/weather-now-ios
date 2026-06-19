@@ -1,9 +1,3 @@
----
-paths:
-  - Packages/**/*.swift
-  - "**/Package.swift"
----
-
 # アーキテクチャルール
 
 ## モジュール依存グラフ
