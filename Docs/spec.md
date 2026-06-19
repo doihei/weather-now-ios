@@ -292,7 +292,7 @@ Open-Meteo の Geocoding API で都市を検索して登録する。
 - [x] ダークモード対応（`Theme+ColorScheme.swift` + `.preferredColorScheme()`）
 
 ### Phase Ex1：デザインシステム
-- [x] Design Tokens（`Spacing.swift` / `Size.swift` / `Size.CornerRadius`）— マジックナンバー排除
+- [x] Design Tokens（`Spacing.swift` / `Size.swift` / `CornerRadius.swift`）— マジックナンバー排除
 - [x] `AppSymbol.swift`（SFSafeSymbols による型安全な SF Symbols 参照）
 - [x] `Localizable.xcstrings`（CoreUI 内に 27 キー定義）+ `L10n.swift` ラッパー enum
 - [x] `LocalizedStringResource+Extension.swift`（`.string()` ヘルパー）
