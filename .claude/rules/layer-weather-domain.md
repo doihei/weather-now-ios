@@ -9,12 +9,12 @@ paths:
 
 `Packages/WeatherDomain/Sources/WeatherDomain/`
 
-| ディレクトリ | 対象ファイル |
+| ディレクトリ | 置くもの |
 |---|---|
-| `CityList/` | CityListService.swift, CityListServiceProtocol.swift, CityListService+Dependency.swift |
-| `Location/` | LocationService.swift, LocationServiceProtocol.swift, LocationService+Dependency.swift |
-| `Repository/` | WeatherRepository.swift, WeatherRepositoryProtocol.swift, WeatherRepository+Dependency.swift |
-| `Settings/` | AppSettingsService.swift, AppSettingsServiceProtocol.swift, AppSettingsService+Dependency.swift |
+| `CityList/` | 登録都市の永続化サービス（Protocol・実装・DependencyKey） |
+| `Location/` | CoreLocation ラッパー・位置情報取得 Actor（Protocol・実装・DependencyKey） |
+| `Repository/` | 天気データ取得・キャッシュ管理 Actor（Protocol・実装・DependencyKey） |
+| `Settings/` | ユーザー設定の永続化サービス（Protocol・実装・DependencyKey） |
 
 Protocol・実装・DependencyKey を**同一ディレクトリ**に配置する（CoreNetwork の `Protocols/` 分離とは異なる）。
 

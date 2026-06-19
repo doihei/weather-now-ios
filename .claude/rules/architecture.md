@@ -43,57 +43,7 @@ WeatherFeatureTCA  ─┤→ WeatherDomain → CoreNetwork → CoreModels
 
 ## ファイル構成
 
-### CoreModels
-
-```
-CoreModels/
-├── City/        — City（登録都市）, GeocodingResult（検索結果）
-├── Errors/      — WeatherError
-├── Settings/    — AppSettings（TemperatureUnit / WindUnit / Theme をネスト）
-└── Weather/     — Weather, CurrentWeather, DailyForecast, HourlyForecast, WeatherCode
-```
-
-### CoreNetwork
-
-```
-CoreNetwork/
-├── Clients/              — APIClient（ベース HTTP）, LiveXxxClient, TestXxxClient
-├── Endpoints/            — OpenMeteoEndpoint（URL・クエリパラメータ定義）
-├── Protocols/            — WeatherAPIClientProtocol, GeocodingAPIClientProtocol
-├── Protocols/Dependencies/ — XxxClient+Dependency.swift（DependencyKey 定義）
-└── Responses/            — ForecastResponse, GeocodingResponse（Decodable）
-```
-
-### WeatherDomain
-
-```
-WeatherDomain/
-├── CityList/     — CityListService, CityListServiceProtocol, CityListService+Dependency
-├── Location/     — LocationService（Actor）, LocationServiceProtocol, LocationService+Dependency
-├── Repository/   — WeatherRepository（Actor・キャッシュ付き）, WeatherRepositoryProtocol, WeatherRepository+Dependency
-└── Settings/     — AppSettingsService, AppSettingsServiceProtocol, AppSettingsService+Dependency
-```
-
-Protocol・実装・DependencyKey を同一ディレクトリに配置する（CoreNetwork の `Protocols/` 分離とは異なる）。
-
-### CoreUI
-
-```
-CoreUI/
-├── Components/
-│   ├── Atoms/    — WeatherIconView, TemperatureText, HourlyItemView
-│   ├── Rows/     — DailyForecastRow, CityWeatherRow, CitySearchResultRow
-│   ├── Sections/ — CurrentWeatherSummaryView, HourlyForecastStripView, WeatherDetailNavigationButtons
-│   ├── Screens/  — CurrentWeatherLoadedView, HourlyChartContentView, WeeklyForecastListView, SettingsFormView
-│   └── States/   — WeatherLoadingView, WeatherErrorView
-├── Extensions/
-│   ├── Models/   — WeatherCode+SFSymbol, Theme+ColorScheme, Theme+DisplayName,
-│   │               TemperatureUnit+AccessibilityName, WindUnit+AccessibilityName
-│   └── Views/    — View+ErrorToast
-├── Localization/ — L10n.swift（自動生成）, LocalizedStringResource+Extension
-├── Resources/    — Localizable.xcstrings
-└── Tokens/       — Spacing, Size, CornerRadius, AppSymbol
-```
+各レイヤーの詳細は `.claude/rules/layer-*.md` を参照すること。
 
 ## MVVM vs TCA 実装方針
 

@@ -9,13 +9,13 @@ paths:
 
 `Packages/CoreNetwork/Sources/CoreNetwork/`
 
-| ディレクトリ | 対象ファイル |
+| ディレクトリ | 置くもの |
 |---|---|
-| `Clients/` | APIClient.swift, WeatherAPIClient.swift, GeocodingAPIClient.swift |
-| `Endpoints/` | OpenMeteoEndpoint.swift |
-| `Protocols/` | WeatherAPIClientProtocol.swift, GeocodingAPIClientProtocol.swift |
-| `Protocols/Dependencies/` | WeatherAPIClient+Dependency.swift, GeocodingAPIClient+Dependency.swift |
-| `Responses/` | ForecastResponse.swift, GeocodingResponse.swift |
+| `Clients/` | ベース HTTP クライアント・各エンドポイントのクライアント実装 |
+| `Endpoints/` | API URL・クエリパラメータ定義（`OpenMeteoEndpoint` enum） |
+| `Protocols/` | クライアント Protocol 定義 |
+| `Protocols/Dependencies/` | `DependencyKey` 定義（`@Dependency` 注入用） |
+| `Responses/` | Decodable レスポンス構造体・ドメインモデルへの変換ロジック |
 
 CoreNetwork のみ Protocol と実装を別ディレクトリに分離する（WeatherDomain は同一ディレクトリに配置するため異なる）。
 

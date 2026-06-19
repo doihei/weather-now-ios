@@ -11,21 +11,11 @@ paths:
 Packages/WeatherFeature/
 ├── Sources/
 │   ├── MVVM/               # SPM target: WeatherFeatureMVVM
-│   │   ├── App/            # AppViewModel.swift, RootView.swift
-│   │   ├── CurrentWeather/ # CurrentWeatherViewModel.swift, CurrentWeatherView.swift
-│   │   ├── WeeklyForecast/ # WeeklyForecastViewModel.swift, WeeklyForecastView.swift
-│   │   ├── HourlyChart/    # HourlyChartView.swift
-│   │   ├── CitySearch/     # CitySearchViewModel.swift, CitySearchView.swift
-│   │   ├── CityList/       # CityListViewModel.swift, CityListView.swift
-│   │   └── Settings/       # SettingsView.swift
+│   │   ├── App/            # Tab 管理 ViewModel と RootView（アプリエントリポイント）
+│   │   └── <ScreenName>/   # 各スクリーンの ViewModel（`@Observable`）と View
 │   └── TCA/                # SPM target: WeatherFeatureTCA
-│       ├── Root/           # RootFeature.swift, RootView.swift
-│       ├── CurrentWeather/ # CurrentWeatherFeature.swift, CurrentWeatherView.swift
-│       ├── WeeklyForecast/ # WeeklyForecastFeature.swift, WeeklyForecastView.swift
-│       ├── HourlyChart/    # HourlyChartFeature.swift, HourlyChartView.swift
-│       ├── CityList/       # CityListFeature.swift, CityRowFeature.swift, CityListView.swift, CityRowView.swift
-│       ├── CitySearch/     # CitySearchFeature.swift, CitySearchView.swift
-│       └── Settings/       # SettingsView.swift
+│       ├── Root/           # Tab 管理 Feature と RootView（アプリエントリポイント）
+│       └── <ScreenName>/   # 各スクリーンの Feature（`@Reducer`）と View
 └── Tests/
     ├── WeatherFeatureMVVMTests/  # Stubs.swift + 各 ViewModel テスト
     └── WeatherFeatureTCATests/   # Stubs.swift + 各 Feature テスト

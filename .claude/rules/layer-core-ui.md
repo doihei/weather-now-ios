@@ -9,28 +9,30 @@ paths:
 
 `Packages/CoreUI/Sources/CoreUI/`
 
-| ディレクトリ | 対象ファイル |
+| ディレクトリ | 置くもの |
 |---|---|
-| `Components/Atoms/` | WeatherIconView.swift, TemperatureText.swift, HourlyItemView.swift |
-| `Components/Rows/` | DailyForecastRow.swift, CityWeatherRow.swift, CitySearchResultRow.swift |
-| `Components/Sections/` | CurrentWeatherSummaryView.swift, HourlyForecastStripView.swift, WeatherDetailNavigationButtons.swift |
-| `Components/Screens/` | CurrentWeatherLoadedView.swift, HourlyChartContentView.swift, WeeklyForecastListView.swift, SettingsFormView.swift |
-| `Components/States/` | WeatherLoadingView.swift, WeatherErrorView.swift |
-| `Extensions/Models/` | WeatherCode+SFSymbol.swift, Theme+ColorScheme.swift, Theme+DisplayName.swift, TemperatureUnit+AccessibilityName.swift, WindUnit+AccessibilityName.swift |
-| `Extensions/Views/` | View+ErrorToast.swift |
-| `Localization/` | L10n.swift（自動生成）, LocalizedStringResource+Extension.swift |
+| `Components/Atoms/` | 単独で意味を持つ最小 UI 単位（icon・text・cell） |
+| `Components/Screens/<ScreenName>/` | 対象スクリーンのコンテンツビュー（VM/Store を持たない） |
+| `Components/Screens/<ScreenName>/Sections/` | Atoms を組み合わせた画面内埋め込みブロック |
+| `Components/Screens/<ScreenName>/States/` | ローディング・エラーなど全画面を占める状態ビュー |
+| `Components/Screens/<ScreenName>/Rows/` | そのスクリーンの List 行コンポーネント |
+| `Components/Screens/<ScreenName>/ChartDescriptors/` | `AXChartDescriptorRepresentable` 実装（グラフ画面のみ） |
+| `Extensions/Models/` | CoreModels 型への UI 拡張（SFSymbol マッピング・locale 依存表示など） |
+| `Extensions/Views/` | View 共通 modifier |
+| `Localization/` | L10n.swift（自動生成）, LocalizedStringResource+Extension |
 | `Resources/` | Localizable.xcstrings |
-| `Tokens/` | Spacing.swift, Size.swift, CornerRadius.swift, AppSymbol.swift |
+| `Tokens/` | Design Token 定数（Spacing / Size / CornerRadius / AppSymbol） |
 
 ## 設計原則・責務
 
 ### コンポーネント階層
 
 - **Atoms**: 単独で意味を持つ最小単位（icon・text・cell）
-- **Rows**: List の 1 行として使うコンポーネント
-- **Sections**: Atoms を組み合わせた画面内埋め込みブロック
-- **Screens**: WeatherFeature の画面 body を担う 1 画面分コンテンツ（VM/Store を持たない）
-- **States**: ローディング・エラーなど全画面を占める状態ビュー
+- **Screens**: WeatherFeature の画面 body を担う 1 画面分コンテンツ（VM/Store を持たない）。スクリーンごとのサブディレクトリに以下を配置する:
+  - **Sections**: Atoms を組み合わせた画面内埋め込みブロック
+  - **States**: ローディング・エラーなど全画面を占める状態ビュー
+  - **Rows**: List の 1 行として使うコンポーネント
+  - **ChartDescriptors**: `AXChartDescriptorRepresentable` 実装（グラフ画面のみ）
 
 ### SF Symbols 利用方針
 

@@ -9,12 +9,12 @@ paths:
 
 `Packages/CoreModels/Sources/CoreModels/`
 
-| ディレクトリ | 対象ファイル |
+| ディレクトリ | 置くもの |
 |---|---|
-| `City/` | City.swift, GeocodingResult.swift |
-| `Errors/` | WeatherError.swift |
-| `Settings/` | AppSettings.swift |
-| `Weather/` | Weather.swift, CurrentWeather.swift, DailyForecast.swift, HourlyForecast.swift, WeatherCode.swift |
+| `City/` | 都市関連モデル（登録都市・検索結果） |
+| `Errors/` | アプリ共通エラー型 |
+| `Settings/` | ユーザー設定モデル（温度単位・風速単位・テーマをネスト定義） |
+| `Weather/` | 天気データモデル（現在・時間帯・日次）・WMO コード変換 |
 
 ## 設計原則・責務
 
