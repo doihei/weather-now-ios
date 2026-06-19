@@ -46,37 +46,3 @@ public struct CitySearchView: View {
         .navigationTitle(L10n.citySearchTitle)
     }
 }
-
-// MARK: - CitySearchResultRow
-
-private struct CitySearchResultRow: View {
-    let result: GeocodingResult
-    let isAdded: Bool
-    let onAdd: () -> Void
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: Spacing.xxs) {
-                Text(result.name)
-                    .font(.body)
-                Text(result.country)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            Spacer()
-            if isAdded {
-                Image(systemName: AppSymbol.cityAdded.rawValue)
-                    .foregroundStyle(.green)
-            } else {
-                Button {
-                    onAdd()
-                } label: {
-                    Image(systemName: AppSymbol.addCityButton.rawValue)
-                        .foregroundStyle(.blue)
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(.vertical, Spacing.xxs)
-    }
-}

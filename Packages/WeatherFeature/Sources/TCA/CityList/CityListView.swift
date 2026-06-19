@@ -40,20 +40,7 @@ public struct CityListView: View {
         .refreshable {
             store.send(.refresh)
         }
-        .overlay {
-            if let error = store.errorMessage {
-                VStack {
-                    Spacer()
-                    Text(error)
-                        .font(.caption)
-                        .foregroundStyle(.white)
-                        .padding(Spacing.md)
-                        .background(Color.red.opacity(0.8))
-                        .clipShape(RoundedRectangle(cornerRadius: CornerRadius.sm))
-                        .padding()
-                }
-            }
-        }
+        .errorToast(message: store.errorMessage)
         .task {
             store.send(.onAppear)
         }

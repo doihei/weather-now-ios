@@ -25,7 +25,7 @@ public struct CityListView: View {
     public var body: some View {
         List {
             ForEach(viewModel.cities) { city in
-                CityRow(
+                CityWeatherRow(
                     city: city,
                     weather: viewModel.citiesWeather[city.id],
                     temperatureUnit: settings.temperatureUnit
@@ -52,20 +52,7 @@ public struct CityListView: View {
         .refreshable {
             viewModel.loadAllWeather()
         }
-        .overlay {
-            if let error = viewModel.errorMessage {
-                VStack {
-                    Spacer()
-                    Text(error)
-                        .font(.caption)
-                        .foregroundStyle(.white)
-                        .padding(Spacing.md)
-                        .background(Color.red.opacity(0.8))
-                        .clipShape(RoundedRectangle(cornerRadius: CornerRadius.sm))
-                        .padding()
-                }
-            }
-        }
+        .errorToast(message: viewModel.errorMessage)
         .task {
             viewModel.loadCities()
             viewModel.loadAllWeather()
@@ -73,36 +60,5 @@ public struct CityListView: View {
         .navigationDestination(for: CityDestination.self) { _ in
             CitySearchView(viewModel: makeCitySearchViewModel())
         }
-    }
-}
-
-// MARK: - CityRow
-
-private struct CityRow: View {
-    let city: City
-    let weather: Weather?
-    let temperatureUnit: AppSettings.TemperatureUnit
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: Spacing.xs) {
-                Text(city.name)
-                    .font(.headline)
-                Text(city.country)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            Spacer()
-            if let weather {
-                HStack(spacing: Spacing.md) {
-                    WeatherIconView(code: weather.current.code, size: Size.iconSM)
-                    TemperatureText(celsius: weather.current.temperature, unit: temperatureUnit)
-                        .font(.title3)
-                }
-            } else {
-                ProgressView()
-            }
-        }
-        .padding(.vertical, Spacing.xs)
     }
 }
