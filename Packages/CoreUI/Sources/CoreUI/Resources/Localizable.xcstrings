@@ -193,6 +193,30 @@
         }
       }
     },
+    "hourlyChart.axisTitleFormat" : {
+      "comment" : "HourlyChartView AXChartDescriptor - Y axis title format. %1$@: metric name, %2$@: unit",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@（%2$@）"
+          }
+        }
+      }
+    },
+    "hourlyChart.dataPointLabelFormat" : {
+      "comment" : "HourlyChartView AXChartDescriptor - data point accessibility label format. %1$@: hour, %2$@: value, %3$@: unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@、%2$@%3$@"
+          }
+        }
+      }
+    },
     "hourlyChart.precipitation" : {
       "comment" : "HourlyChartView - precipitation chart section label",
       "extractionState" : "manual",
@@ -205,6 +229,30 @@
         }
       }
     },
+    "hourlyChart.precipitationSummaryFormat" : {
+      "comment" : "HourlyChartView AXChartDescriptor - precipitation chart summary format. %1$@: chart name, %2$@: total value, %3$@: unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24時間の%1$@グラフ。合計%2$@%3$@。"
+          }
+        }
+      }
+    },
+    "hourlyChart.precipitationUnitName" : {
+      "comment" : "HourlyChartView AXChartDescriptor - precipitation VoiceOver accessibility unit name (e.g. ミリ for mm)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ミリ"
+          }
+        }
+      }
+    },
     "hourlyChart.temperature" : {
       "comment" : "HourlyChartView - temperature chart section label",
       "extractionState" : "manual",
@@ -213,6 +261,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "気温"
+          }
+        }
+      }
+    },
+    "hourlyChart.temperatureSummaryFormat" : {
+      "comment" : "HourlyChartView AXChartDescriptor - temperature chart summary format. %1$@: chart name, %2$@: min value, %3$@: unit name, %4$@: max value, %5$@: unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "24時間の%1$@グラフ。最低%2$@%3$@、最高%4$@%5$@。"
           }
         }
       }

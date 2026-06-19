@@ -26,6 +26,7 @@ public struct HourlyChartContentView: View {
         VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.hourlyChartTemperature)
                 .font(.headline)
+                .accessibilityAddTraits(.isHeader)
             Chart(hourlyForecasts) { forecast in
                 LineMark(
                     x: .value(L10n.hourlyChartTime, forecast.time),
@@ -52,6 +53,12 @@ public struct HourlyChartContentView: View {
             .chartScrollableAxes(.horizontal)
             .chartXVisibleDomain(length: visibleDomainSeconds)
             .frame(height: Size.chartDefault)
+            .accessibilityChartDescriptor(
+                TemperatureChartDescriptor(
+                    forecasts: hourlyForecasts,
+                    unit: temperatureUnit
+                )
+            )
         }
     }
 
@@ -59,6 +66,7 @@ public struct HourlyChartContentView: View {
         VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.hourlyChartPrecipitation)
                 .font(.headline)
+                .accessibilityAddTraits(.isHeader)
             Chart(hourlyForecasts) { forecast in
                 BarMark(
                     x: .value(L10n.hourlyChartTime, forecast.time),
@@ -85,6 +93,9 @@ public struct HourlyChartContentView: View {
             .chartScrollableAxes(.horizontal)
             .chartXVisibleDomain(length: visibleDomainSeconds)
             .frame(height: Size.chartDefault)
+            .accessibilityChartDescriptor(
+                PrecipitationChartDescriptor(forecasts: hourlyForecasts)
+            )
         }
     }
 

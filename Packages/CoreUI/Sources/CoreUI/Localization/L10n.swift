@@ -70,12 +70,32 @@ public enum L10n {
         String(localized: "currentWeather.weeklyForecastButton", bundle: Bundle.module)
     }
 
+    public static var hourlyChartAxisTitleFormat: String {
+        String(localized: "hourlyChart.axisTitleFormat", bundle: Bundle.module)
+    }
+
+    public static var hourlyChartDataPointLabelFormat: String {
+        String(localized: "hourlyChart.dataPointLabelFormat", bundle: Bundle.module)
+    }
+
     public static var hourlyChartPrecipitation: String {
         String(localized: "hourlyChart.precipitation", bundle: Bundle.module)
     }
 
+    public static var hourlyChartPrecipitationSummaryFormat: String {
+        String(localized: "hourlyChart.precipitationSummaryFormat", bundle: Bundle.module)
+    }
+
+    public static var hourlyChartPrecipitationUnitName: String {
+        String(localized: "hourlyChart.precipitationUnitName", bundle: Bundle.module)
+    }
+
     public static var hourlyChartTemperature: String {
         String(localized: "hourlyChart.temperature", bundle: Bundle.module)
+    }
+
+    public static var hourlyChartTemperatureSummaryFormat: String {
+        String(localized: "hourlyChart.temperatureSummaryFormat", bundle: Bundle.module)
     }
 
     public static var hourlyChartTime: String {
