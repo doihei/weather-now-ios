@@ -58,4 +58,3 @@ GitHub Actions でプッシュ・PR 時に以下を自動実行します。
 |---|---|
 | [docs/spec.md](docs/spec.md) | 画面仕様・データモデル設計 |
 | [docs/api.md](docs/api.md) | Open-Meteo API エンドポイント・レスポンス定義 |
-| [docs/architecture.md](docs/architecture.md) | モジュール構成・依存関係・MVVM vs TCA 比較 |
