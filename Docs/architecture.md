@@ -74,11 +74,15 @@ Protocol・実装・DependencyKey を同一ディレクトリに配置する（C
 CoreUI/
 ├── Components/
 │   ├── Atoms/    — WeatherIconView, TemperatureText, HourlyItemView（最小単位）
-│   ├── Sections/ — CurrentWeatherSummaryView, CurrentWeatherLoadedView,
-│   │               HourlyForecastStripView, WeatherDetailNavigationButtons（画面セクション）
-│   └── States/   — WeatherLoadingView, WeatherErrorView（画面状態）
+│   ├── Rows/     — DailyForecastRow, CityWeatherRow, CitySearchResultRow（List 行）
+│   ├── Sections/ — CurrentWeatherSummaryView, HourlyForecastStripView,
+│   │               WeatherDetailNavigationButtons（画面内埋め込みブロック）
+│   ├── Screens/  — CurrentWeatherLoadedView, HourlyChartContentView,
+│   │               WeeklyForecastListView, SettingsFormView（1 画面分コンテンツ）
+│   └── States/   — WeatherLoadingView, WeatherErrorView（全画面状態）
 ├── Extensions/   — WeatherCode+SFSymbol, Theme+ColorScheme, Theme+DisplayName,
-│                   TemperatureUnit+AccessibilityName, WindUnit+AccessibilityName
+│                   TemperatureUnit+AccessibilityName, WindUnit+AccessibilityName,
+│                   View+ErrorToast
 ├── Localization/ — L10n.swift（自動生成）, LocalizedStringResource+Extension
 ├── Resources/    — Localizable.xcstrings
 └── Tokens/       — Spacing, Size, CornerRadius, AppSymbol（Design Tokens）
