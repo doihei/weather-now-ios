@@ -46,7 +46,9 @@ Protocol と実装は同じディレクトリに配置する（CoreNetwork の `
 
 | ディレクトリ | 対象 |
 |---|---|
-| `Components/` | WeatherIconView, TemperatureText（共通 UI コンポーネント） |
+| `Components/Atoms/` | 単独で意味を持つ最小単位（WeatherIconView, TemperatureText, HourlyItemView） |
+| `Components/Sections/` | Atoms を組合せた画面セクション単位（CurrentWeatherSummaryView, HourlyForecastStripView, WeatherDetailNavigationButtons） |
+| `Components/States/` | ローディング・エラーなど画面状態を表すビュー（WeatherLoadingView, WeatherErrorView） |
 | `Extensions/` | 他モジュール型への extension（WeatherCode+SFSymbol, Theme+ColorScheme） |
 | `Localization/` | L10n.swift（自動生成）, LocalizedStringResource+Extension.swift |
 | `Resources/` | Localizable.xcstrings |
