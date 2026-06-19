@@ -42,12 +42,22 @@ public struct HourlyChartView: View {
                 .interpolationMethod(.catmullRom)
             }
             .chartXAxis {
-                AxisMarks(values: .stride(by: .hour, count: 3)) {
+                AxisMarks(values: .stride(by: .hour, count: 6)) { _ in
                     AxisGridLine()
+                    AxisTick()
                     AxisValueLabel(format: .dateTime.hour())
                 }
             }
+            .chartYAxis {
+                AxisMarks(position: .leading) { _ in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel()
+                }
+            }
             .chartYAxisLabel(temperatureUnit.symbol)
+            .chartScrollableAxes(.horizontal)
+            .chartXVisibleDomain(length: visibleDomainSeconds)
             .frame(height: Size.chartDefault)
         }
     }
@@ -64,13 +74,33 @@ public struct HourlyChartView: View {
                 .foregroundStyle(.blue)
             }
             .chartXAxis {
-                AxisMarks(values: .stride(by: .hour, count: 3)) {
+                AxisMarks(values: .stride(by: .hour, count: 6)) { _ in
                     AxisGridLine()
+                    AxisTick()
                     AxisValueLabel(format: .dateTime.hour())
                 }
             }
+            .chartYAxis {
+                AxisMarks(position: .leading) { _ in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel()
+                }
+            }
+            .chartYScale(domain: 0 ... precipitationMax)
             .chartYAxisLabel("mm")
+            .chartScrollableAxes(.horizontal)
+            .chartXVisibleDomain(length: visibleDomainSeconds)
             .frame(height: Size.chartDefault)
         }
+    }
+
+    private var precipitationMax: Double {
+        max(store.hourlyForecasts.map(\.precipitation).max() ?? 0, 1)
+    }
+
+    /// 横スクロール時の可視範囲（24時間 = 86,400 秒）
+    private var visibleDomainSeconds: TimeInterval {
+        3600 * 24
     }
 }
