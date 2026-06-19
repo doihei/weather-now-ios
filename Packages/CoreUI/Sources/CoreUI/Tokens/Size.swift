@@ -16,13 +16,4 @@ public enum Size {
 
     /// Chart heights
     public static let chartDefault: CGFloat = 200
-
-    // MARK: - CornerRadius
-
-    public enum CornerRadius {
-        public static let xSmall: CGFloat = 4
-        public static let small: CGFloat = 8
-        public static let medium: CGFloat = 12
-        public static let large: CGFloat = 16
-    }
 }
