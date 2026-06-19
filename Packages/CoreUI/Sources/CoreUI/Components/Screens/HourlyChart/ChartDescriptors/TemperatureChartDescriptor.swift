@@ -15,7 +15,7 @@ struct TemperatureChartDescriptor: AXChartDescriptorRepresentable {
 
     func makeChartDescriptor() -> AXChartDescriptor {
         AXChartDescriptor(
-            title: L10n.hourlyChartPrecipitation,
+            title: L10n.hourlyChartTemperature,
             summary: summary,
             xAxis: xAxis,
             yAxis: yAxis,
