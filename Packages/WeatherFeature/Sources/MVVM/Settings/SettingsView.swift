@@ -33,7 +33,7 @@ public struct SettingsView: View {
                 }
             }
             Section(L10n.settingsInfoSection) {
-                LabeledContent("API", value: "Open-Meteo v1")
+                LabeledContent(L10n.settingsApiLabel, value: "Open-Meteo v1")
             }
         }
         .navigationTitle(L10n.settingsTitle)
