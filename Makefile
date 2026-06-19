@@ -1,8 +1,15 @@
-.PHONY: bootstrap format lint generate test test-models test-network test-domain test-feature test-feature-mvvm test-feature-tca
+.PHONY: bootstrap format lint generate clean test test-models test-network test-domain test-feature test-feature-mvvm test-feature-tca
 
 bootstrap:
 	swift build --package-path Tools -c release --product swiftlint
 	swift build --package-path Tools -c release --product swiftformat
+
+clean:
+	swift package --package-path Packages/CoreModels clean
+	swift package --package-path Packages/CoreNetwork clean
+	swift package --package-path Packages/CoreUI clean
+	swift package --package-path Packages/WeatherDomain clean
+	swift package --package-path Packages/WeatherFeature clean
 
 format:
 	Tools/.build/release/swiftformat .

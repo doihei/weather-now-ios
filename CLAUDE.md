@@ -17,6 +17,7 @@ make bootstrap          # SwiftFormat・SwiftLint を release ビルド（初回
 make format             # コード整形
 make lint               # コード検査
 make generate           # L10n.swift を Localizable.xcstrings から再生成
+make clean              # 全パッケージのビルドキャッシュを削除（新ファイル追加後など）
 make test               # 全テスト
 make test-feature-mvvm  # MVVM のみ
 make test-feature-tca   # TCA のみ
@@ -33,4 +34,4 @@ make test-feature-tca   # TCA のみ
 - **Phase 3 完了**：WeatherFeature MVVM ViewModels
 - **Phase 4 完了**：WeatherFeature TCA Features（38テスト）
 - **Phase 5 完了**：全 View 実装（MVVM / TCA）・Swift Charts・ダークモード対応
-- **Phase Ex1 完了**：デザインシステム（Spacing / Size / AppSymbol トークン・L10n 自動生成）
+- **Phase Ex1 完了**：デザインシステム（Spacing / Size / CornerRadius / AppSymbol トークン・L10n 自動生成）
