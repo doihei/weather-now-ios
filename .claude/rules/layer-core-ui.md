@@ -12,20 +12,25 @@ paths:
 | ディレクトリ | 対象ファイル |
 |---|---|
 | `Components/Atoms/` | WeatherIconView.swift, TemperatureText.swift, HourlyItemView.swift |
-| `Components/Sections/` | CurrentWeatherSummaryView.swift, CurrentWeatherLoadedView.swift, HourlyForecastStripView.swift, WeatherDetailNavigationButtons.swift |
+| `Components/Rows/` | DailyForecastRow.swift, CityWeatherRow.swift, CitySearchResultRow.swift |
+| `Components/Sections/` | CurrentWeatherSummaryView.swift, HourlyForecastStripView.swift, WeatherDetailNavigationButtons.swift |
+| `Components/Screens/` | CurrentWeatherLoadedView.swift, HourlyChartContentView.swift, WeeklyForecastListView.swift, SettingsFormView.swift |
 | `Components/States/` | WeatherLoadingView.swift, WeatherErrorView.swift |
-| `Extensions/` | WeatherCode+SFSymbol.swift, Theme+ColorScheme.swift, Theme+DisplayName.swift, TemperatureUnit+AccessibilityName.swift, WindUnit+AccessibilityName.swift |
+| `Extensions/Models/` | WeatherCode+SFSymbol.swift, Theme+ColorScheme.swift, Theme+DisplayName.swift, TemperatureUnit+AccessibilityName.swift, WindUnit+AccessibilityName.swift |
+| `Extensions/Views/` | View+ErrorToast.swift |
 | `Localization/` | L10n.swift（自動生成）, LocalizedStringResource+Extension.swift |
 | `Resources/` | Localizable.xcstrings |
-| `Tokens/` | Spacing.swift, Size.swift（CornerRadius ネスト含む）, AppSymbol.swift |
+| `Tokens/` | Spacing.swift, Size.swift, CornerRadius.swift, AppSymbol.swift |
 
 ## 設計原則・責務
 
 ### コンポーネント階層
 
-- **Atoms**: 単独で意味を持つ最小単位
-- **Sections**: Atoms を組み合わせた画面セクション単位
-- **States**: ローディング・エラーなど画面状態を表すビュー
+- **Atoms**: 単独で意味を持つ最小単位（icon・text・cell）
+- **Rows**: List の 1 行として使うコンポーネント
+- **Sections**: Atoms を組み合わせた画面内埋め込みブロック
+- **Screens**: WeatherFeature の画面 body を担う 1 画面分コンテンツ（VM/Store を持たない）
+- **States**: ローディング・エラーなど全画面を占める状態ビュー
 
 ### SF Symbols 利用方針
 

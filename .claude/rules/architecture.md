@@ -8,16 +8,13 @@ paths:
 
 ## モジュール依存グラフ
 
-依存は下向きのみ。逆方向の依存は禁止。
+```
+WeatherFeatureMVVM ─┐
+WeatherFeatureTCA  ─┤→ WeatherDomain → CoreNetwork → CoreModels
+                    └→ CoreUI                       ↗
+```
 
-```
-WeatherFeature (MVVM / TCA)
-    └→ WeatherDomain
-        └→ CoreNetwork
-            └→ CoreModels
-CoreUI
-    └→ CoreModels
-```
+依存は**下向きのみ**。逆方向の依存は禁止。
 
 ## 各モジュールの責務
 
@@ -29,7 +26,7 @@ CoreUI
 | WeatherDomain | Repository、LocationService | UI処理 |
 | WeatherFeature | View、ViewModel / Feature | ネットワーク直接呼び出し |
 
-## UI関心事の判断基準
+## UI 関心事の判断基準
 
 **CoreUI に置く（UIフレームワーク依存 or locale 依存）**
 - SF Symbols マッピング（`SFSymbol` 型を返すもの）
@@ -49,6 +46,83 @@ CoreUI
 | swift-composable-architecture | WeatherFeatureTCA のみ |
 | swift-dependencies | CoreNetwork・WeatherDomain・WeatherFeatureMVVM（各テストターゲット含む） |
 | swift-dependencies（TCA 経由） | WeatherFeatureTCA・WeatherFeatureTCATests |
+
+## ファイル構成
+
+### CoreModels
+
+```
+CoreModels/
+├── City/        — City（登録都市）, GeocodingResult（検索結果）
+├── Errors/      — WeatherError
+├── Settings/    — AppSettings（TemperatureUnit / WindUnit / Theme をネスト）
+└── Weather/     — Weather, CurrentWeather, DailyForecast, HourlyForecast, WeatherCode
+```
+
+### CoreNetwork
+
+```
+CoreNetwork/
+├── Clients/              — APIClient（ベース HTTP）, LiveXxxClient, TestXxxClient
+├── Endpoints/            — OpenMeteoEndpoint（URL・クエリパラメータ定義）
+├── Protocols/            — WeatherAPIClientProtocol, GeocodingAPIClientProtocol
+├── Protocols/Dependencies/ — XxxClient+Dependency.swift（DependencyKey 定義）
+└── Responses/            — ForecastResponse, GeocodingResponse（Decodable）
+```
+
+### WeatherDomain
+
+```
+WeatherDomain/
+├── CityList/     — CityListService, CityListServiceProtocol, CityListService+Dependency
+├── Location/     — LocationService（Actor）, LocationServiceProtocol, LocationService+Dependency
+├── Repository/   — WeatherRepository（Actor・キャッシュ付き）, WeatherRepositoryProtocol, WeatherRepository+Dependency
+└── Settings/     — AppSettingsService, AppSettingsServiceProtocol, AppSettingsService+Dependency
+```
+
+Protocol・実装・DependencyKey を同一ディレクトリに配置する（CoreNetwork の `Protocols/` 分離とは異なる）。
+
+### CoreUI
+
+```
+CoreUI/
+├── Components/
+│   ├── Atoms/    — WeatherIconView, TemperatureText, HourlyItemView
+│   ├── Rows/     — DailyForecastRow, CityWeatherRow, CitySearchResultRow
+│   ├── Sections/ — CurrentWeatherSummaryView, HourlyForecastStripView, WeatherDetailNavigationButtons
+│   ├── Screens/  — CurrentWeatherLoadedView, HourlyChartContentView, WeeklyForecastListView, SettingsFormView
+│   └── States/   — WeatherLoadingView, WeatherErrorView
+├── Extensions/
+│   ├── Models/   — WeatherCode+SFSymbol, Theme+ColorScheme, Theme+DisplayName,
+│   │               TemperatureUnit+AccessibilityName, WindUnit+AccessibilityName
+│   └── Views/    — View+ErrorToast
+├── Localization/ — L10n.swift（自動生成）, LocalizedStringResource+Extension
+├── Resources/    — Localizable.xcstrings
+└── Tokens/       — Spacing, Size, CornerRadius, AppSymbol
+```
+
+## MVVM vs TCA 実装方針
+
+| 関心事 | MVVM（@Observable） | TCA（@Reducer） |
+|---|---|---|
+| 状態管理 | `@Observable` ViewModel | `State` struct |
+| 非同期処理 | `Task` + TaskKey | `.run { }` + `.cancellable(id:)` |
+| ナビゲーション | `AppViewModel` が `NavigationPath` を保持 | `RootFeature` が `StackState` を管理 |
+| DI | `@Dependency` で注入（`testValue` 必須） | `@Dependency` で注入（`testValue` 必須） |
+| debounce | `Task.sleep` + `checkCancellation()` | `clock.sleep(.milliseconds(300))` + `.cancellable(id:, cancelInFlight: true)` |
+| 都市リスト | `[City]` を直接管理 | `IdentifiedArrayOf` + `.forEach` |
+
+## エラーハンドリング
+
+全エラーは `WeatherError` に集約する。
+
+| case | 説明 |
+|---|---|
+| `locationDenied` | 位置情報権限が拒否されている |
+| `locationUnavailable` | 位置情報の取得失敗 |
+| `networkFailure(String)` | URLError などネットワーク系エラー |
+| `decodingFailure` | JSON デコード失敗 |
+| `cityLimitReached` | 登録都市数が上限（10 件）超過 |
 
 ## ファイル命名規則
 
