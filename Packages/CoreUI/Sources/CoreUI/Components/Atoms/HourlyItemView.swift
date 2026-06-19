@@ -8,16 +8,11 @@
 import CoreModels
 import SwiftUI
 
-public struct HourlyItemView: View {
+struct HourlyItemView: View {
     let forecast: HourlyForecast
     let temperatureUnit: AppSettings.TemperatureUnit
 
-    public init(forecast: HourlyForecast, temperatureUnit: AppSettings.TemperatureUnit) {
-        self.forecast = forecast
-        self.temperatureUnit = temperatureUnit
-    }
-
-    public var body: some View {
+    var body: some View {
         VStack(spacing: Spacing.sm) {
             Text(forecast.time, format: .dateTime.hour())
                 .font(.caption2)

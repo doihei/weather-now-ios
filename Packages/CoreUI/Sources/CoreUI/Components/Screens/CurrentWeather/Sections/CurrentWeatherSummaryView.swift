@@ -4,16 +4,11 @@ import SwiftUI
 // MARK: - CurrentWeatherSummaryView
 
 /// 現在の天気サマリー（アイコン・天気名・気温・体感/湿度/風速）を表示する共通コンポーネント。
-public struct CurrentWeatherSummaryView: View {
+struct CurrentWeatherSummaryView: View {
     let current: CurrentWeather
     let settings: AppSettings
 
-    public init(current: CurrentWeather, settings: AppSettings) {
-        self.current = current
-        self.settings = settings
-    }
-
-    public var body: some View {
+    var body: some View {
         VStack(alignment: .center, spacing: Spacing.lg) {
             WeatherIconView(code: current.code, size: Size.iconLG)
             Text(current.code.description)

@@ -4,19 +4,11 @@ import SwiftUI
 
 /// 「週間予報」「24時間グラフ」へ遷移する 2 つのボタンを並べた共通コンポーネント。
 /// 遷移処理は呼び出し側がクロージャで注入する。
-public struct WeatherDetailNavigationButtons: View {
+struct WeatherDetailNavigationButtons: View {
     let onWeeklyForecast: () -> Void
     let onHourlyChart: () -> Void
 
-    public init(
-        onWeeklyForecast: @escaping () -> Void,
-        onHourlyChart: @escaping () -> Void
-    ) {
-        self.onWeeklyForecast = onWeeklyForecast
-        self.onHourlyChart = onHourlyChart
-    }
-
-    public var body: some View {
+    var body: some View {
         HStack(spacing: Spacing.xl) {
             Button(action: onWeeklyForecast) {
                 Label(

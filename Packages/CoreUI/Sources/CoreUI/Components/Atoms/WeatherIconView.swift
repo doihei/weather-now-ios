@@ -5,18 +5,18 @@ import SwiftUI
 // MARK: - WeatherIconView
 
 /// WeatherCode を SF Symbol で表示する共通コンポーネント。
-public struct WeatherIconView: View {
+struct WeatherIconView: View {
     let code: WeatherCode
     let size: CGFloat
     let isDecorative: Bool
 
-    public init(code: WeatherCode, size: CGFloat = Size.iconMD, isDecorative: Bool = true) {
+    init(code: WeatherCode, size: CGFloat = Size.iconMD, isDecorative: Bool = true) {
         self.code = code
         self.size = size
         self.isDecorative = isDecorative
     }
 
-    public var body: some View {
+    var body: some View {
         Image(systemSymbol: code.symbol)
             .resizable()
             .scaledToFit()
