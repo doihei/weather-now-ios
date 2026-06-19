@@ -31,13 +31,15 @@ CoreUI
 
 ## UI関心事の判断基準
 
-**CoreUI に置く（UIフレームワーク依存）**
+**CoreUI に置く（UIフレームワーク依存 or locale 依存）**
 - SF Symbols マッピング（`SFSymbol` 型を返すもの）
 - SwiftUI コンポーネント
+- locale 依存の表示文言（`displayName` / `accessibilityUnitName` など）— `Localizable.xcstrings` 経由で L10n 化するため CoreUI の extension に置く
 
-**CoreModels に残す（UI以外でも使用可能）**
-- 表示テキスト・ラベル（通知・ログ・Siri でも使用するため）
+**CoreModels に残す（locale 非依存・UI 以外でも使用可能）**
+- 単位記号（`"℃"` / `"km/h"` など、locale 非依存の記号）
 - 単位変換ロジック
+- データモデル・エラー型・永続化キー
 
 ## 外部ライブラリの依存先
 

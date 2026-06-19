@@ -49,6 +49,42 @@
         }
       }
     },
+    "currentWeather.accessibility.feelsLikeFormat" : {
+      "comment" : "CurrentWeatherSummaryView - accessibility label format for feels like temperature. %1$@: temperature value, %2$@: unit accessibility name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "体感%1$@%2$@"
+          }
+        }
+      }
+    },
+    "currentWeather.accessibility.humidityFormat" : {
+      "comment" : "CurrentWeatherSummaryView - accessibility label format for humidity. %1$lld: humidity percentage",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "湿度%1$lldパーセント"
+          }
+        }
+      }
+    },
+    "currentWeather.accessibility.windFormat" : {
+      "comment" : "CurrentWeatherSummaryView - accessibility label format for wind speed. %1$@: speed value, %2$@: unit accessibility name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "風速%1$@%2$@"
+          }
+        }
+      }
+    },
     "currentWeather.feelsLikePrefix" : {
       "comment" : "CurrentWeatherView - feels like temperature label prefix",
       "extractionState" : "manual",
@@ -145,6 +181,18 @@
         }
       }
     },
+    "hourlyItem.accessibilityLabelFormat" : {
+      "comment" : "HourlyItemView - accessibility label format. %1$@: hour string, %2$@: weather description, %3$@: temperature value, %4$@: unit accessibility name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@時、%2$@、%3$@%4$@"
+          }
+        }
+      }
+    },
     "hourlyChart.precipitation" : {
       "comment" : "HourlyChartView - precipitation chart section label",
       "extractionState" : "manual",
@@ -189,6 +237,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "24時間グラフ"
+          }
+        }
+      }
+    },
+    "settings.apiLabel" : {
+      "comment" : "SettingsView - API info row label",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "API"
           }
         }
       }
@@ -285,6 +345,90 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "都市"
+          }
+        }
+      }
+    },
+    "temperatureUnit.celsius.accessibility" : {
+      "comment" : "AppSettings.TemperatureUnit.celsius - VoiceOver accessibility unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "度"
+          }
+        }
+      }
+    },
+    "temperatureUnit.fahrenheit.accessibility" : {
+      "comment" : "AppSettings.TemperatureUnit.fahrenheit - VoiceOver accessibility unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "華氏度"
+          }
+        }
+      }
+    },
+    "theme.dark" : {
+      "comment" : "AppSettings.Theme.dark - settings picker display name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダーク"
+          }
+        }
+      }
+    },
+    "theme.light" : {
+      "comment" : "AppSettings.Theme.light - settings picker display name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライト"
+          }
+        }
+      }
+    },
+    "theme.system" : {
+      "comment" : "AppSettings.Theme.system - settings picker display name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システム"
+          }
+        }
+      }
+    },
+    "windUnit.kmh.accessibility" : {
+      "comment" : "AppSettings.WindUnit.kmh - VoiceOver accessibility unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キロメートル毎時"
+          }
+        }
+      }
+    },
+    "windUnit.mph.accessibility" : {
+      "comment" : "AppSettings.WindUnit.mph - VoiceOver accessibility unit name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイル毎時"
           }
         }
       }

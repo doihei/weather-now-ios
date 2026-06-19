@@ -55,18 +55,6 @@ enum AppSettingsTests {
         }
     }
 
-    // MARK: - Theme
-
-    struct ThemeTests {
-        @Test("displayName が正しい", arguments: zip(
-            [AppSettings.Theme.system, .light, .dark],
-            ["システム", "ライト", "ダーク"]
-        ))
-        func displayName(theme: AppSettings.Theme, expected: String) {
-            #expect(theme.displayName == expected)
-        }
-    }
-
     // MARK: - Default & Persistence
 
     struct PersistenceTests {

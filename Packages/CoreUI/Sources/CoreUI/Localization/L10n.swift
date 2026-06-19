@@ -26,6 +26,18 @@ public enum L10n {
         String(localized: "citySearch.title", bundle: Bundle.module)
     }
 
+    public static var currentWeatherAccessibilityFeelsLikeFormat: String {
+        String(localized: "currentWeather.accessibility.feelsLikeFormat", bundle: Bundle.module)
+    }
+
+    public static var currentWeatherAccessibilityHumidityFormat: String {
+        String(localized: "currentWeather.accessibility.humidityFormat", bundle: Bundle.module)
+    }
+
+    public static var currentWeatherAccessibilityWindFormat: String {
+        String(localized: "currentWeather.accessibility.windFormat", bundle: Bundle.module)
+    }
+
     public static var currentWeatherFeelsLikePrefix: String {
         String(localized: "currentWeather.feelsLikePrefix", bundle: Bundle.module)
     }
@@ -74,6 +86,14 @@ public enum L10n {
         String(localized: "hourlyChart.title", bundle: Bundle.module)
     }
 
+    public static var hourlyItemAccessibilityLabelFormat: String {
+        String(localized: "hourlyItem.accessibilityLabelFormat", bundle: Bundle.module)
+    }
+
+    public static var settingsApiLabel: String {
+        String(localized: "settings.apiLabel", bundle: Bundle.module)
+    }
+
     public static var settingsAppearanceSection: String {
         String(localized: "settings.appearanceSection", bundle: Bundle.module)
     }
@@ -114,7 +134,35 @@ public enum L10n {
         String(localized: "tab.weather", bundle: Bundle.module)
     }
 
+    public static var temperatureUnitCelsiusAccessibility: String {
+        String(localized: "temperatureUnit.celsius.accessibility", bundle: Bundle.module)
+    }
+
+    public static var temperatureUnitFahrenheitAccessibility: String {
+        String(localized: "temperatureUnit.fahrenheit.accessibility", bundle: Bundle.module)
+    }
+
+    public static var themeDark: String {
+        String(localized: "theme.dark", bundle: Bundle.module)
+    }
+
+    public static var themeLight: String {
+        String(localized: "theme.light", bundle: Bundle.module)
+    }
+
+    public static var themeSystem: String {
+        String(localized: "theme.system", bundle: Bundle.module)
+    }
+
     public static var weeklyForecastTitle: String {
         String(localized: "weeklyForecast.title", bundle: Bundle.module)
+    }
+
+    public static var windUnitKmhAccessibility: String {
+        String(localized: "windUnit.kmh.accessibility", bundle: Bundle.module)
+    }
+
+    public static var windUnitMphAccessibility: String {
+        String(localized: "windUnit.mph.accessibility", bundle: Bundle.module)
     }
 }
