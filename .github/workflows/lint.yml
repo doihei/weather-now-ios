@@ -1,0 +1,25 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: SwiftLint / SwiftFormat
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Tools/.build
+          key: ${{ runner.os }}-tools-${{ hashFiles('Tools/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-tools-
+      - name: Bootstrap tools
+        run: make bootstrap
+      - name: SwiftLint
+        run: Tools/.build/release/swiftlint lint --reporter github-actions-logging .
+      - name: SwiftFormat (check)
+        run: Tools/.build/release/swiftformat --lint .
