@@ -15,11 +15,11 @@ struct HourlyItemView: View {
     var body: some View {
         VStack(spacing: Spacing.sm) {
             Text(forecast.time, format: .dateTime.hour())
-                .font(.caption2)
+                .font(Typography.captionSmall)
                 .foregroundStyle(.secondary)
             WeatherIconView(code: forecast.code, size: Size.iconXS)
             TemperatureText(celsius: forecast.temperature, unit: temperatureUnit)
-                .font(.caption)
+                .font(Typography.caption)
         }
         .frame(width: Size.touchTarget)
         .accessibilityElement(children: .combine)

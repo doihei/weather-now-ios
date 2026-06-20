@@ -16,9 +16,9 @@ public struct CityWeatherRow: View {
         HStack {
             VStack(alignment: .leading, spacing: Spacing.xs) {
                 Text(city.name)
-                    .font(.headline)
+                    .font(Typography.rowTitle)
                 Text(city.country)
-                    .font(.caption)
+                    .font(Typography.caption)
                     .foregroundStyle(.secondary)
             }
             Spacer()
@@ -26,7 +26,7 @@ public struct CityWeatherRow: View {
                 HStack(spacing: Spacing.md) {
                     WeatherIconView(code: weather.current.code, size: Size.iconSM)
                     TemperatureText(celsius: weather.current.temperature, unit: temperatureUnit)
-                        .font(.title3)
+                        .font(Typography.emphasis)
                 }
             } else {
                 ProgressView()

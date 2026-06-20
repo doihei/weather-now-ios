@@ -25,7 +25,7 @@ public struct HourlyChartContentView: View {
     private var temperatureChart: some View {
         VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.hourlyChartTemperature)
-                .font(.headline)
+                .font(Typography.sectionTitle)
                 .accessibilityAddTraits(.isHeader)
             Chart(hourlyForecasts) { forecast in
                 LineMark(
@@ -65,7 +65,7 @@ public struct HourlyChartContentView: View {
     private var precipitationChart: some View {
         VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.hourlyChartPrecipitation)
-                .font(.headline)
+                .font(Typography.sectionTitle)
                 .accessibilityAddTraits(.isHeader)
             Chart(hourlyForecasts) { forecast in
                 BarMark(

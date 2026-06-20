@@ -12,10 +12,10 @@ struct CurrentWeatherSummaryView: View {
         VStack(alignment: .center, spacing: Spacing.lg) {
             WeatherIconView(code: current.code, size: Size.iconLG)
             Text(current.code.description)
-                .font(.title3)
+                .font(Typography.emphasis)
                 .foregroundStyle(.secondary)
             TemperatureText(celsius: current.temperature, unit: settings.temperatureUnit)
-                .font(.system(size: Size.fontDisplay, weight: .thin))
+                .font(Typography.display)
             HStack(spacing: Spacing.xxl) {
                 let feelsLike = settings.temperatureUnit.convert(current.feelsLike)
                 let wind = settings.windUnit.convert(current.windSpeed)
@@ -31,7 +31,7 @@ struct CurrentWeatherSummaryView: View {
                     systemImage: AppSymbol.wind.rawValue
                 )
             }
-            .font(.caption)
+            .font(Typography.caption)
             .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)

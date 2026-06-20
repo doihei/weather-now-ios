@@ -37,7 +37,7 @@ public struct CitySearchView: View {
             if let error = store.errorMessage {
                 Text(error)
                     .foregroundStyle(.red)
-                    .font(.caption)
+                    .font(Typography.caption)
             }
         }
         .searchable(text: $store.query.sending(\.queryChanged), prompt: L10n.citySearchSearchPrompt)

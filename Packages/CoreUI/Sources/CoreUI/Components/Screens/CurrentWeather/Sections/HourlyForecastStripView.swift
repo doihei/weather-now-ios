@@ -11,7 +11,7 @@ struct HourlyForecastStripView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.md) {
             Text(L10n.currentWeatherTodayForecast)
-                .font(.headline)
+                .font(Typography.sectionTitle)
                 .accessibilityAddTraits(.isHeader)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: Spacing.xl) {

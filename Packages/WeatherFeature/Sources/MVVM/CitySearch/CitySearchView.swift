@@ -36,7 +36,7 @@ public struct CitySearchView: View {
             if let error = viewModel.errorMessage {
                 Text(error)
                     .foregroundStyle(.red)
-                    .font(.caption)
+                    .font(Typography.caption)
             }
         }
         .searchable(text: Binding(

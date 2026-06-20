@@ -7,7 +7,7 @@ public extension View {
                 VStack {
                     Spacer()
                     Text(message)
-                        .font(.caption)
+                        .font(Typography.caption)
                         .foregroundStyle(.white)
                         .padding(Spacing.md)
                         .background(Color.red.opacity(0.8))

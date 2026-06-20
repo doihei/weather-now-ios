@@ -16,9 +16,9 @@ public struct CitySearchResultRow: View {
         HStack {
             VStack(alignment: .leading, spacing: Spacing.xxs) {
                 Text(result.name)
-                    .font(.body)
+                    .font(Typography.rowTitleCompact)
                 Text(result.country)
-                    .font(.caption)
+                    .font(Typography.caption)
                     .foregroundStyle(.secondary)
             }
             Spacer()

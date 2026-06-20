@@ -14,12 +14,12 @@ public struct DailyForecastRow: View {
         HStack(spacing: Spacing.lg) {
             Text(forecast.date, format: .dateTime.month().day().weekday(.abbreviated))
                 .frame(width: Size.labelColumn, alignment: .leading)
-                .font(.subheadline)
+                .font(Typography.subtitle)
 
             WeatherIconView(code: forecast.code, size: Size.iconSM)
 
             Text(forecast.code.description)
-                .font(.caption)
+                .font(Typography.caption)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
 
@@ -34,7 +34,7 @@ public struct DailyForecastRow: View {
 
             VStack(alignment: .trailing, spacing: Spacing.xxs) {
                 Text("\(forecast.precipitationProb)%")
-                    .font(.caption2)
+                    .font(Typography.captionSmall)
                     .foregroundStyle(.blue)
                 ProgressView(value: Double(forecast.precipitationProb), total: 100)
                     .frame(width: 40)
