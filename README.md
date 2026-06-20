@@ -25,6 +25,7 @@ make generate
 make test               # 全パッケージ
 make test-models        # CoreModels のみ
 make test-network       # CoreNetwork のみ
+make test-ui            # CoreUI のみ
 make test-domain        # WeatherDomain のみ
 make test-feature       # WeatherFeature（MVVM + TCA）
 make test-feature-mvvm  # WeatherFeature MVVM のみ

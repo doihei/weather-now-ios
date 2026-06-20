@@ -21,7 +21,7 @@ paths:
 | `Extensions/Views/` | View 共通 modifier |
 | `Localization/` | L10n.swift（自動生成）, LocalizedStringResource+Extension |
 | `Resources/` | Localizable.xcstrings |
-| `Tokens/` | Design Token 定数（Spacing / Size / CornerRadius / AppSymbol） |
+| `Tokens/` | Design Token 定数（Spacing / Size / CornerRadius / AppSymbol / Typography） |
 
 ## 設計原則・責務
 
@@ -73,5 +73,5 @@ VStack(spacing: 12) { ... }
 
 テストターゲット: `CoreUITests`（`Packages/CoreUI/Tests/CoreUITests/`）
 
-CoreUI はビジュアル的な要素が多く、現状はスモークテスト 1 ファイルのみ（`CoreUITests.swift`）。
-Tokens の定数値検証・L10n キーの存在確認など、UI 非依存の要素を優先して検証する。
+Design Tokens の定数値、L10n キーの存在確認、SFSymbol マッピング、テーマ・単位のアクセシビリティ名など
+UI 非依存の要素をファイル単位のテストスイートで網羅する（11 ファイル・44 テスト）。
