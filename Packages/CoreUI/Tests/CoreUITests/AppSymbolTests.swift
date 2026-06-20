@@ -3,14 +3,10 @@ import Testing
 @testable import CoreUI
 
 enum AppSymbolTests {
-    struct TabBarSymbolTests {
-        @Test("タブ用シンボルが意図した SFSymbol と一致する")
-        func tabSymbolsMatchExpected() {
-            #expect(AppSymbol.weatherTab == .cloudSunFill)
-            #expect(AppSymbol.cityTab == .building2Fill)
-            #expect(AppSymbol.settingsTab == .gearshapeFill)
-        }
+    // 役割が同じグループ内のシンボルが意図せず同じ値（コピペミス）になっていないことを担保する。
+    // 個別の SFSymbol 値（例: weatherTab == .cloudSunFill）はソース上自明なため検証しない。
 
+    struct TabBarSymbolTests {
         @Test("3 つのタブシンボルは互いに異なる")
         func tabSymbolsAreDistinct() {
             let symbols: Set<SFSymbol> = [
@@ -20,27 +16,8 @@ enum AppSymbolTests {
         }
     }
 
-    struct WeatherDetailSymbolTests {
-        @Test("天気詳細用シンボルが意図した SFSymbol と一致する")
-        func detailSymbolsMatchExpected() {
-            #expect(AppSymbol.thermometer == .thermometerMedium)
-            #expect(AppSymbol.humidity == .humidity)
-            #expect(AppSymbol.wind == .wind)
-            #expect(AppSymbol.weeklyForecast == .calendar)
-            #expect(AppSymbol.hourlyChart == .chartLineUptrendXyaxis)
-            #expect(AppSymbol.errorWarning == .exclamationmarkTriangle)
-        }
-    }
-
     struct CitySymbolTests {
-        @Test("都市追加・一覧用シンボルが意図した SFSymbol と一致する")
-        func citySymbolsMatchExpected() {
-            #expect(AppSymbol.addCity == .plus)
-            #expect(AppSymbol.cityAdded == .checkmarkCircleFill)
-            #expect(AppSymbol.addCityButton == .plusCircle)
-        }
-
-        @Test("都市追加系シンボル 3 種は互いに異なる")
+        @Test("都市追加・追加済み・追加ボタンの 3 シンボルは互いに異なる")
         func citySymbolsAreDistinct() {
             let symbols: Set<SFSymbol> = [
                 AppSymbol.addCity, AppSymbol.cityAdded, AppSymbol.addCityButton,
