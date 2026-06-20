@@ -31,6 +31,18 @@ jobs:
           restore-keys: ${{ runner.os }}-spm-network-
       - run: make test-network
 
+  test-ui:
+    name: CoreUI
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: Packages/CoreUI/.build
+          key: ${{ runner.os }}-spm-ui-${{ hashFiles('Packages/CoreUI/Package.resolved') }}
+          restore-keys: ${{ runner.os }}-spm-ui-
+      - run: make test-ui
+
   test-domain:
     name: WeatherDomain
     runs-on: macos-15
