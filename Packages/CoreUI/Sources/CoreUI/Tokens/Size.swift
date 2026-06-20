@@ -7,9 +7,6 @@ public enum Size {
     public static let iconMD: CGFloat = 40
     public static let iconLG: CGFloat = 64
 
-    /// Font sizes
-    public static let fontDisplay: CGFloat = 64
-
     // Component dimensions
     public static let touchTarget: CGFloat = 48
     public static let labelColumn: CGFloat = 72
